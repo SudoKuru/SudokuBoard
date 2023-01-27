@@ -67,25 +67,24 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 0:
+/***/ 10:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("C:\\Users\\Daniel\\Desktop\\Current Classes\\Senior Design\\Project\\Medium Post src\\react-sudoku-game\\node_modules\\next\\dist\\pages\\_error.js");
+module.exports = __webpack_require__(11);
 
 
 /***/ }),
 
-/***/ "C:\\Users\\Daniel\\Desktop\\Current Classes\\Senior Design\\Project\\Medium Post src\\react-sudoku-game\\node_modules\\next\\dist\\pages\\_error.js":
+/***/ 11:
 /***/ (function(module, exports) {
 
-module.exports = require("C:\\Users\\Daniel\\Desktop\\Current Classes\\Senior Design\\Project\\Medium Post src\\react-sudoku-game\\node_modules\\next\\dist\\pages\\_error.js");
+module.exports = require("C:\\Users\\arthu\\Repos\\SudokuBoard\\react-sudoku-game\\node_modules\\next\\dist\\pages\\_error.js");
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=_error.js.map

@@ -208,6 +208,10 @@ class GenerationUI extends Component {
     this.state = { value: 30 };
   }
 
+  componentDidMount() {
+    this.generateGame();
+  }
+
   generateGame = () => {
     this.props.generateGame(this.state.value);
   }
@@ -215,62 +219,7 @@ class GenerationUI extends Component {
   render() {
     return (
       <div className="generation">
-        <div className="copy">Start with {this.state.value} cells prefilled</div>
-        <InputRange
-          maxValue={81}
-          minValue={17}
-          value={this.state.value}
-          onChange={value => this.setState({ value })}
-        />
-        <div className="button" onClick={this.generateGame}>Play Sudoku</div>
-        { /* language=CSS */ }
-        <style jsx>{`
-            .copy {
-                text-align: center;
-                font-size: 1.3em;
-                margin-bottom: .5em;
-            }
-            .generation {
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
-            }
-            :global(.input-range) {
-                width: 80%;
-                max-width: 500px;
-            }
-            .button {
-              margin-top: .5em;
-              border-radius: .25em;
-              cursor: pointer;
-              font-weight: bold;
-              text-decoration: none;
-              color: #fff;
-              position: relative;
-              display: inline-block;
-              transition: all .25s;
-              padding: 5px 10px;
-              font-size: 1.4em;
-            }
-            .button:active {
-              transform: translate(0px, 5px);
-              box-shadow: 0 1px 0 0;
-            }
-
-            .button {
-              background-color: ${backGroundBlue};
-              box-shadow: 0 2px 4px 0 ${Color(backGroundBlue).darken(0.5).hsl().string()};
-              display: flex;
-              align-items: center;
-            }
-
-            .button:hover {
-              background-color: ${Color(backGroundBlue).lighten(0.2).hsl().string()};
-            }
-        `}
-        </style>
+        <div className="copy">Building board with {this.state.value} cells prefilled...</div>
       </div>
     );
   }
