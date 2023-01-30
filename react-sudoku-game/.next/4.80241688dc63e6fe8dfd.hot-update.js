@@ -1,330 +1,22 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		var threw = true;
-/******/ 		try {
-/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 			threw = false;
-/******/ 		} finally {
-/******/ 			if(threw) delete installedModules[moduleId];
-/******/ 		}
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ "./colors.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export backGroundOrange */
-/* unused harmony export backGroundGrey */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return backGroundBlue; });
-/* unused harmony export backGroundGreen */
-var backGroundOrange = '#F4511E';
-var backGroundGrey = '#546E7A';
-var backGroundBlue = '#1B6B9B';
-var backGroundGreen = '#7CDC1B';
-
-/***/ }),
-
-/***/ "./components/tool-tip.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__("styled-jsx/style");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_popover__ = __webpack_require__("react-popover");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_popover___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_popover__);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jsxFileName = 'C:\\Users\\Daniel\\Desktop\\Current Classes\\Senior Design\\Project\\Medium Post src\\react-sudoku-game\\components\\tool-tip.js';
-
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-var HelpIcon = function HelpIcon(props) {
-  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-    'svg',
-    props,
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('path', {
-      d: 'M231.2 336.033c-9.35 0-17 7.65-17 17v11.333c0 9.35 7.65 17 17 17s17-7.65 17-17v-11.333c0-9.35-7.65-17-17-17z'
-    }),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('path', {
-      d: 'M236.867 473.733c130.617 0 236.867-106.25 236.867-236.867S367.483 0 236.867 0 0 106.25 0 236.867s106.25 236.866 236.867 236.866zm0-439.733c111.917 0 202.867 90.95 202.867 202.867s-90.95 202.867-202.867 202.867S34 348.783 34 236.867 124.95 34 236.867 34z'
-    }),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('path', {
-      d: 'M163.2 194.367c.283 0 .283 0 0 0 9.35 0 17-7.083 17-16.433 0 0 .283-13.6 7.083-26.917 8.5-17 23.517-25.5 45.617-25.5 20.683 0 35.983 5.667 44.483 16.717 7.083 9.067 9.067 21.533 5.667 35.133-4.25 16.717-18.7 31.167-32.583 45.333-17 17.567-34.85 35.417-34.85 59.5 0 9.35 7.65 17 17 17s17-7.65 17-17c0-10.2 12.183-22.667 25.217-35.7 16.15-16.433 34.567-35.133 41.083-60.633 6.233-23.517 1.983-47.033-11.617-64.317-10.483-13.6-31.45-30.033-71.117-30.033-44.483 0-65.733 23.8-75.933 44.2-10.2 20.4-10.767 39.95-10.767 42.217 0 9.066 7.367 16.433 16.717 16.433z'
-    })
-  );
-};
-
-HelpIcon.defaultProps = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 473.733 473.733'
-};
-
-
-var TipCopy = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-  'div',
-  {
-    className: 'jsx-289995913' + ' ' + 'tip-copy',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    }
-  },
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-    'div',
-    {
-      className: 'jsx-289995913' + ' ' + 'tip-line',
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7
-      }
-    },
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-      'b',
-      {
-        className: 'jsx-289995913',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7
-        }
-      },
-      'Select:'
-    ),
-    ' Click a cell'
-  ),
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-    'div',
-    {
-      className: 'jsx-289995913' + ' ' + 'tip-line',
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8
-      }
-    },
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-      'b',
-      {
-        className: 'jsx-289995913',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 8
-        }
-      },
-      'Assign Number:'
-    ),
-    ' Single click on desired number control'
-  ),
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-    'div',
-    {
-      className: 'jsx-289995913',
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      }
-    },
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-      'b',
-      {
-        className: 'jsx-289995913',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 9
-        }
-      },
-      'Tag Number as Note:'
-    ),
-    ' Double click on the desired number control'
-  ),
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
-    styleId: '289995913',
-    css: '.tip-copy.jsx-289995913{font-size:1.2em;}.tip-line.jsx-289995913{margin-bottom:.4em;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHNcXHRvb2wtdGlwLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVVnQixBQUc2QixBQUdHLGdCQUZ2QixHQUdBIiwiZmlsZSI6ImNvbXBvbmVudHNcXHRvb2wtdGlwLmpzIiwic291cmNlUm9vdCI6IkM6L1VzZXJzL0RhbmllbC9EZXNrdG9wL0N1cnJlbnQgQ2xhc3Nlcy9TZW5pb3IgRGVzaWduL1Byb2plY3QvTWVkaXVtIFBvc3Qgc3JjL3JlYWN0LXN1ZG9rdS1nYW1lIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0JztcclxuaW1wb3J0IFBvcG92ZXIgZnJvbSAncmVhY3QtcG9wb3Zlcic7XHJcbmltcG9ydCBIZWxwSWNvbiBmcm9tICcuLi9zdmcvaGVscC5zdmcnO1xyXG5cclxuY29uc3QgVGlwQ29weSA9IChcclxuICA8ZGl2IGNsYXNzTmFtZT1cInRpcC1jb3B5XCI+XHJcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInRpcC1saW5lXCI+PGI+U2VsZWN0OjwvYj4gQ2xpY2sgYSBjZWxsPC9kaXY+XHJcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInRpcC1saW5lXCI+PGI+QXNzaWduIE51bWJlcjo8L2I+IFNpbmdsZSBjbGljayBvbiBkZXNpcmVkIG51bWJlciBjb250cm9sPC9kaXY+XHJcbiAgICA8ZGl2PjxiPlRhZyBOdW1iZXIgYXMgTm90ZTo8L2I+IERvdWJsZSBjbGljayBvbiB0aGUgZGVzaXJlZCBudW1iZXIgY29udHJvbDwvZGl2PlxyXG4gICAgeyAvKiBsYW5ndWFnZT1DU1MgKi8gfVxyXG4gICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgIC50aXAtY29weSB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMS4yZW07XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC50aXAtbGluZSB7XHJcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IC40ZW07XHJcbiAgICAgICAgfVxyXG4gICAgYH1cclxuICAgIDwvc3R5bGU+XHJcbiAgPC9kaXY+XHJcbilcclxuXHJcblxyXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBUaXAgZXh0ZW5kcyBDb21wb25lbnQge1xyXG4gICAgc3RhdGUgPSB7fVxyXG4gICAgdG9nZ2xlT3BlbiA9IChldmVudCkgPT4ge1xyXG4gICAgICAvLyBUaGlzIHByZXZlbnRzIGdob3N0IGNsaWNrLlxyXG4gICAgICBldmVudC5wcmV2ZW50RGVmYXVsdCgpO1xyXG4gICAgICB0aGlzLnNldFN0YXRlKHsgb3BlbjogIXRoaXMuc3RhdGUub3BlbiB9KTtcclxuICAgIH1cclxuXHJcbiAgICBjbG9zZSA9ICgpID0+IHtcclxuICAgICAgdGhpcy5zZXRTdGF0ZSh7IG9wZW46IGZhbHNlIH0pO1xyXG4gICAgfVxyXG5cclxuICAgIG9wZW4gPSAoKSA9PiB7XHJcbiAgICAgIHRoaXMuc2V0U3RhdGUoeyBvcGVuOiB0cnVlIH0pO1xyXG4gICAgfVxyXG4gICAgcmVuZGVyKCkge1xyXG4gICAgICByZXR1cm4gKFxyXG4gICAgICAgIDxQb3BvdmVyXHJcbiAgICAgICAgICBpc09wZW49e3RoaXMuc3RhdGUub3Blbn1cclxuICAgICAgICAgIHByZWZlclBsYWNlPVwiYmVsb3dcIlxyXG4gICAgICAgICAgYm9keT17VGlwQ29weX1cclxuICAgICAgICAgIHN0eWxlPXt7IHdpZHRoOiAnOTB2dycsIG1heFdpZHRoOiAnNDBlbScgfX1cclxuICAgICAgICA+XHJcbiAgICAgICAgICA8ZGl2XHJcbiAgICAgICAgICAgIG9uQ2xpY2s9e3RoaXMudG9nZ2xlT3Blbn1cclxuICAgICAgICAgICAgb25Nb3VzZUVudGVyPXt0aGlzLm9wZW59XHJcbiAgICAgICAgICAgIG9uTW91c2VMZWF2ZT17dGhpcy5jbG9zZX1cclxuICAgICAgICAgID5cclxuICAgICAgICAgICAgPEhlbHBJY29uIGNsYXNzTmFtZT1cImljb25cIiAvPlxyXG4gICAgICAgICAgICB7IC8qIGxhbmd1YWdlPUNTUyAqLyB9XHJcbiAgICAgICAgICAgIDxzdHlsZSBqc3g+e2BcclxuICAgICAgICAgICAgICAgIDpnbG9iYWwoLmljb24pIHtcclxuICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IDEuMjVlbTtcclxuICAgICAgICAgICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIGB9XHJcbiAgICAgICAgICAgIDwvc3R5bGU+XHJcbiAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICA8L1BvcG92ZXI+XHJcbiAgICAgICk7XHJcbiAgICB9XHJcbn1cclxuIl19 */\n/*@ sourceURL=components\\tool-tip.js */'
-  })
-);
-
-var Tip = function (_Component) {
-  _inherits(Tip, _Component);
-
-  function Tip() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, Tip);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Tip.__proto__ || Object.getPrototypeOf(Tip)).call.apply(_ref, [this].concat(args))), _this), _this.state = {}, _this.toggleOpen = function (event) {
-      // This prevents ghost click.
-      event.preventDefault();
-      _this.setState({ open: !_this.state.open });
-    }, _this.close = function () {
-      _this.setState({ open: false });
-    }, _this.open = function () {
-      _this.setState({ open: true });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(Tip, [{
-    key: 'render',
-    value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_2_react_popover___default.a,
-        {
-          isOpen: this.state.open,
-          preferPlace: 'below',
-          body: TipCopy,
-          style: { width: '90vw', maxWidth: '40em' },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 41
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          {
-            onClick: this.toggleOpen,
-            onMouseEnter: this.open,
-            onMouseLeave: this.close,
-            className: 'jsx-2314980512',
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 47
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(HelpIcon, { className: 'icon', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 52
-            }
-          }),
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
-            styleId: '2314980512',
-            css: '.icon{height:1.25em;cursor:pointer;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHNcXHRvb2wtdGlwLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXFEd0IsQUFHbUMsY0FDQyxlQUNuQiIsImZpbGUiOiJjb21wb25lbnRzXFx0b29sLXRpcC5qcyIsInNvdXJjZVJvb3QiOiJDOi9Vc2Vycy9EYW5pZWwvRGVza3RvcC9DdXJyZW50IENsYXNzZXMvU2VuaW9yIERlc2lnbi9Qcm9qZWN0L01lZGl1bSBQb3N0IHNyYy9yZWFjdC1zdWRva3UtZ2FtZSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBDb21wb25lbnQgfSBmcm9tICdyZWFjdCc7XHJcbmltcG9ydCBQb3BvdmVyIGZyb20gJ3JlYWN0LXBvcG92ZXInO1xyXG5pbXBvcnQgSGVscEljb24gZnJvbSAnLi4vc3ZnL2hlbHAuc3ZnJztcclxuXHJcbmNvbnN0IFRpcENvcHkgPSAoXHJcbiAgPGRpdiBjbGFzc05hbWU9XCJ0aXAtY29weVwiPlxyXG4gICAgPGRpdiBjbGFzc05hbWU9XCJ0aXAtbGluZVwiPjxiPlNlbGVjdDo8L2I+IENsaWNrIGEgY2VsbDwvZGl2PlxyXG4gICAgPGRpdiBjbGFzc05hbWU9XCJ0aXAtbGluZVwiPjxiPkFzc2lnbiBOdW1iZXI6PC9iPiBTaW5nbGUgY2xpY2sgb24gZGVzaXJlZCBudW1iZXIgY29udHJvbDwvZGl2PlxyXG4gICAgPGRpdj48Yj5UYWcgTnVtYmVyIGFzIE5vdGU6PC9iPiBEb3VibGUgY2xpY2sgb24gdGhlIGRlc2lyZWQgbnVtYmVyIGNvbnRyb2w8L2Rpdj5cclxuICAgIHsgLyogbGFuZ3VhZ2U9Q1NTICovIH1cclxuICAgIDxzdHlsZSBqc3g+e2BcclxuICAgICAgICAudGlwLWNvcHkge1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDEuMmVtO1xyXG4gICAgICAgIH1cclxuICAgICAgICAudGlwLWxpbmUge1xyXG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAuNGVtO1xyXG4gICAgICAgIH1cclxuICAgIGB9XHJcbiAgICA8L3N0eWxlPlxyXG4gIDwvZGl2PlxyXG4pXHJcblxyXG5cclxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgVGlwIGV4dGVuZHMgQ29tcG9uZW50IHtcclxuICAgIHN0YXRlID0ge31cclxuICAgIHRvZ2dsZU9wZW4gPSAoZXZlbnQpID0+IHtcclxuICAgICAgLy8gVGhpcyBwcmV2ZW50cyBnaG9zdCBjbGljay5cclxuICAgICAgZXZlbnQucHJldmVudERlZmF1bHQoKTtcclxuICAgICAgdGhpcy5zZXRTdGF0ZSh7IG9wZW46ICF0aGlzLnN0YXRlLm9wZW4gfSk7XHJcbiAgICB9XHJcblxyXG4gICAgY2xvc2UgPSAoKSA9PiB7XHJcbiAgICAgIHRoaXMuc2V0U3RhdGUoeyBvcGVuOiBmYWxzZSB9KTtcclxuICAgIH1cclxuXHJcbiAgICBvcGVuID0gKCkgPT4ge1xyXG4gICAgICB0aGlzLnNldFN0YXRlKHsgb3BlbjogdHJ1ZSB9KTtcclxuICAgIH1cclxuICAgIHJlbmRlcigpIHtcclxuICAgICAgcmV0dXJuIChcclxuICAgICAgICA8UG9wb3ZlclxyXG4gICAgICAgICAgaXNPcGVuPXt0aGlzLnN0YXRlLm9wZW59XHJcbiAgICAgICAgICBwcmVmZXJQbGFjZT1cImJlbG93XCJcclxuICAgICAgICAgIGJvZHk9e1RpcENvcHl9XHJcbiAgICAgICAgICBzdHlsZT17eyB3aWR0aDogJzkwdncnLCBtYXhXaWR0aDogJzQwZW0nIH19XHJcbiAgICAgICAgPlxyXG4gICAgICAgICAgPGRpdlxyXG4gICAgICAgICAgICBvbkNsaWNrPXt0aGlzLnRvZ2dsZU9wZW59XHJcbiAgICAgICAgICAgIG9uTW91c2VFbnRlcj17dGhpcy5vcGVufVxyXG4gICAgICAgICAgICBvbk1vdXNlTGVhdmU9e3RoaXMuY2xvc2V9XHJcbiAgICAgICAgICA+XHJcbiAgICAgICAgICAgIDxIZWxwSWNvbiBjbGFzc05hbWU9XCJpY29uXCIgLz5cclxuICAgICAgICAgICAgeyAvKiBsYW5ndWFnZT1DU1MgKi8gfVxyXG4gICAgICAgICAgICA8c3R5bGUganN4PntgXHJcbiAgICAgICAgICAgICAgICA6Z2xvYmFsKC5pY29uKSB7XHJcbiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxLjI1ZW07XHJcbiAgICAgICAgICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICBgfVxyXG4gICAgICAgICAgICA8L3N0eWxlPlxyXG4gICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPC9Qb3BvdmVyPlxyXG4gICAgICApO1xyXG4gICAgfVxyXG59XHJcbiJdfQ== */\n/*@ sourceURL=components\\tool-tip.js */'
-          })
-        )
-      );
-    }
-  }]);
-
-  return Tip;
-}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
-
-/* harmony default export */ __webpack_exports__["a"] = (Tip);
-
-/***/ }),
-
-/***/ "./input-range-style.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__colors__ = __webpack_require__("./colors.js");
-
-
-
-// eslint-disable-next-line no-lone-blocks
-// eslint-disable-next-line import/no-extraneous-dependencies
-{/* language=CSS */}
-var Style = new String(".input-range__slider{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:#3f51b5;border:1px solid #3f51b5;border-radius:100%;cursor:pointer;display:block;height:1rem;margin-left:-0.5rem;margin-top:-0.65rem;outline:none;position:absolute;top:50%;-webkit-transition:-webkit-transform 0.3s ease-out,box-shadow 0.3s ease-out;-webkit-transition:transform 0.3s ease-out,box-shadow 0.3s ease-out;transition:transform 0.3s ease-out,box-shadow 0.3s ease-out;width:1rem;}.input-range__slider:active{-webkit-transform:scale(1.3);-ms-transform:scale(1.3);transform:scale(1.3);}.input-range__slider:focus{box-shadow:0 0 0 5px rgba(63,81,181,0.2);}.input-range--disabled .input-range__slider{background:#cccccc;border:1px solid #cccccc;box-shadow:none;-webkit-transform:none;-ms-transform:none;transform:none;}.input-range__slider-container{-webkit-transition:left 0.3s ease-out;transition:left 0.3s ease-out;}.input-range__label{color:#aaaaaa;font-size:0.8rem;-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0);white-space:nowrap;}.input-range__label--min,.input-range__label--max{bottom:-1.4rem;position:absolute;}.input-range__label--min{left:0;}.input-range__label--max{right:0;}.input-range__label--value{position:absolute;top:-1.8rem;}.input-range__label-container{left:-50%;position:relative;}.input-range__label--max .input-range__label-container{left:50%;}.input-range__track{background:#eeeeee;border-radius:0.3rem;cursor:pointer;display:block;height:0.3rem;position:relative;-webkit-transition:left 0.3s ease-out,width 0.3s ease-out;transition:left 0.3s ease-out,width 0.3s ease-out;}.input-range--disabled .input-range__track{background:#eeeeee;}.input-range__track--background{left:0;margin-top:-0.15rem;position:absolute;right:0;top:50%;}.input-range__track--active{background:#3f51b5;}.input-range{height:1rem;position:relative;margin-top:1.2em;margin-bottom:1.4em;}.Popover{z-index:2000;}.Popover-body{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:.5rem 1rem;background:white;border-radius:0.3rem;opacity:.95;box-shadow:rgba(0,0,0,0.12) 0 1px 6px,rgba(0,0,0,0.12) 0 1px 4px;font-size:14px;}.Popover-tipShape{fill:" + __WEBPACK_IMPORTED_MODULE_0__colors__["a" /* backGroundBlue */] + ";}.Popover-white .Popover-tipShape{fill:#00bcd4;}.Popover-white .Popover-body{background:white;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImlucHV0LXJhbmdlLXN0eWxlLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1pQixBQUdtQixBQWVPLEFBRXVCLEFBRXpCLEFBTVMsQUFHaEIsQUFPQyxBQUlSLEFBR0MsQUFHVSxBQUlSLEFBR0MsQUFHUSxBQVFFLEFBR2QsQUFPWSxBQUdQLEFBT0csQUFHTyxBQVdjLEFBSXJCLEFBSUksT0FsRVgsQUE0QlksQ0F6QlgsQ0FVRyxDQUZNLEVBMkJBLENBT3BCLEFBa0JBLENBekVtQixDQU9DLEVBc0VwQixDQTVEYyxDQTFCZSxBQW9DTixBQU9DLEFBVUYsUUFMRixDQWxCQyxFQUpOLEFBZ0NJLENBaERPLEVBTUwsQ0E4RHJCLE1BekNpQixDQXhDZ0MsR0FJN0IsQ0FnRFYsRUFVWSxNQVRaLEVBWk0sS0FwQ0csQ0FyQkUsQUFxRVYsTUFVWCxDQXZEaUMsQ0FrQ2pCLE1BNUNVLEtBYkMsR0EwRFAsa0JBQ2lDLENBMEIzQixHQXBGTCxVQTRCQSxFQVRELE9BbEJILFVBMkJLLEtBMUJOLGNBQ0YsWUFDUSxlQWlGQyxLQWhGRCxjQWlGRCxNQWhGTixJQW9EdUMsT0E2QjdCLEVBaEZMLGtCQUNWLENBZ0ZNLE9BL0UrQyxLQWdGYSxpRUFDekQsZUFDbkIsdUhBakZhLFdBQUMiLCJmaWxlIjoiaW5wdXQtcmFuZ2Utc3R5bGUuanMiLCJzb3VyY2VSb290IjoiQzovVXNlcnMvRGFuaWVsL0Rlc2t0b3AvQ3VycmVudCBDbGFzc2VzL1NlbmlvciBEZXNpZ24vUHJvamVjdC9NZWRpdW0gUG9zdCBzcmMvcmVhY3Qtc3Vkb2t1LWdhbWUiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgaW1wb3J0L25vLWV4dHJhbmVvdXMtZGVwZW5kZW5jaWVzXHJcbmltcG9ydCBjc3MgZnJvbSAnc3R5bGVkLWpzeC9jc3MnO1xyXG5pbXBvcnQge2JhY2tHcm91bmRCbHVlfSBmcm9tIFwiLi9jb2xvcnNcIjtcclxuXHJcbi8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSBuby1sb25lLWJsb2Nrc1xyXG57IC8qIGxhbmd1YWdlPUNTUyAqLyB9XHJcbmNvbnN0IFN0eWxlID0gY3NzYFxyXG4uaW5wdXQtcmFuZ2VfX3NsaWRlciB7XHJcbiAgYXBwZWFyYW5jZTogbm9uZTtcclxuICBiYWNrZ3JvdW5kOiAjM2Y1MWI1O1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICMzZjUxYjU7XHJcbiAgYm9yZGVyLXJhZGl1czogMTAwJTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgaGVpZ2h0OiAxcmVtO1xyXG4gIG1hcmdpbi1sZWZ0OiAtMC41cmVtO1xyXG4gIG1hcmdpbi10b3A6IC0wLjY1cmVtO1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogNTAlO1xyXG4gIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzIGVhc2Utb3V0LCBib3gtc2hhZG93IDAuM3MgZWFzZS1vdXQ7XHJcbiAgd2lkdGg6IDFyZW07IH1cclxuICAuaW5wdXQtcmFuZ2VfX3NsaWRlcjphY3RpdmUge1xyXG4gICAgdHJhbnNmb3JtOiBzY2FsZSgxLjMpOyB9XHJcbiAgLmlucHV0LXJhbmdlX19zbGlkZXI6Zm9jdXMge1xyXG4gICAgYm94LXNoYWRvdzogMCAwIDAgNXB4IHJnYmEoNjMsIDgxLCAxODEsIDAuMik7IH1cclxuICAuaW5wdXQtcmFuZ2UtLWRpc2FibGVkIC5pbnB1dC1yYW5nZV9fc2xpZGVyIHtcclxuICAgIGJhY2tncm91bmQ6ICNjY2NjY2M7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjY2NjO1xyXG4gICAgYm94LXNoYWRvdzogbm9uZTtcclxuICAgIHRyYW5zZm9ybTogbm9uZTsgfVxyXG5cclxuLmlucHV0LXJhbmdlX19zbGlkZXItY29udGFpbmVyIHtcclxuICB0cmFuc2l0aW9uOiBsZWZ0IDAuM3MgZWFzZS1vdXQ7IH1cclxuXHJcbi5pbnB1dC1yYW5nZV9fbGFiZWwge1xyXG4gIGNvbG9yOiAjYWFhYWFhO1xyXG4gIGZvbnQtc2l6ZTogMC44cmVtO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWigwKTtcclxuICB3aGl0ZS1zcGFjZTogbm93cmFwOyB9XHJcblxyXG4uaW5wdXQtcmFuZ2VfX2xhYmVsLS1taW4sXHJcbi5pbnB1dC1yYW5nZV9fbGFiZWwtLW1heCB7XHJcbiAgYm90dG9tOiAtMS40cmVtO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTsgfVxyXG5cclxuLmlucHV0LXJhbmdlX19sYWJlbC0tbWluIHtcclxuICBsZWZ0OiAwOyB9XHJcblxyXG4uaW5wdXQtcmFuZ2VfX2xhYmVsLS1tYXgge1xyXG4gIHJpZ2h0OiAwOyB9XHJcblxyXG4uaW5wdXQtcmFuZ2VfX2xhYmVsLS12YWx1ZSB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogLTEuOHJlbTsgfVxyXG5cclxuLmlucHV0LXJhbmdlX19sYWJlbC1jb250YWluZXIge1xyXG4gIGxlZnQ6IC01MCU7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlOyB9XHJcbiAgLmlucHV0LXJhbmdlX19sYWJlbC0tbWF4IC5pbnB1dC1yYW5nZV9fbGFiZWwtY29udGFpbmVyIHtcclxuICAgIGxlZnQ6IDUwJTsgfVxyXG5cclxuLmlucHV0LXJhbmdlX190cmFjayB7XHJcbiAgYmFja2dyb3VuZDogI2VlZWVlZTtcclxuICBib3JkZXItcmFkaXVzOiAwLjNyZW07XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIGhlaWdodDogMC4zcmVtO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB0cmFuc2l0aW9uOiBsZWZ0IDAuM3MgZWFzZS1vdXQsIHdpZHRoIDAuM3MgZWFzZS1vdXQ7IH1cclxuICAuaW5wdXQtcmFuZ2UtLWRpc2FibGVkIC5pbnB1dC1yYW5nZV9fdHJhY2sge1xyXG4gICAgYmFja2dyb3VuZDogI2VlZWVlZTsgfVxyXG5cclxuLmlucHV0LXJhbmdlX190cmFjay0tYmFja2dyb3VuZCB7XHJcbiAgbGVmdDogMDtcclxuICBtYXJnaW4tdG9wOiAtMC4xNXJlbTtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgcmlnaHQ6IDA7XHJcbiAgdG9wOiA1MCU7IH1cclxuXHJcbi5pbnB1dC1yYW5nZV9fdHJhY2stLWFjdGl2ZSB7XHJcbiAgYmFja2dyb3VuZDogIzNmNTFiNTsgfVxyXG5cclxuLmlucHV0LXJhbmdlIHtcclxuICBoZWlnaHQ6IDFyZW07XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIG1hcmdpbi10b3A6IDEuMmVtO1xyXG4gIG1hcmdpbi1ib3R0b206IDEuNGVtO1xyXG59XHJcbiAgXHJcbi5Qb3BvdmVyIHtcclxuICAgIHotaW5kZXg6IDIwMDA7XHJcbn1cclxuLlBvcG92ZXItYm9keSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBwYWRkaW5nOiAuNXJlbSAxcmVtO1xyXG4gICAgYmFja2dyb3VuZDogd2hpdGU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwLjNyZW07XHJcbiAgICBvcGFjaXR5OiAuOTU7XHJcbiAgICBib3gtc2hhZG93OiByZ2JhKDAsIDAsIDAsIDAuMTIpIDAgMXB4IDZweCwgcmdiYSgwLCAwLCAwLCAwLjEyKSAwIDFweCA0cHg7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbn1cclxuXHJcbi5Qb3BvdmVyLXRpcFNoYXBlIHtcclxuICAgIGZpbGw6ICR7YmFja0dyb3VuZEJsdWV9O1xyXG59XHJcblxyXG4uUG9wb3Zlci13aGl0ZSAuUG9wb3Zlci10aXBTaGFwZSB7XHJcbiAgICBmaWxsOiAjMDBiY2Q0O1xyXG59XHJcblxyXG4uUG9wb3Zlci13aGl0ZSAuUG9wb3Zlci1ib2R5IHtcclxuICAgIGJhY2tncm91bmQ6IHdoaXRlO1xyXG59XHJcbiAgYDtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IFN0eWxlO1xyXG4iXX0= */\n/*@ sourceURL=input-range-style.js */");
-
-Style.__hash = "981618613";
-Style.__scoped = ".input-range__slider.jsx-1649775604{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:#3f51b5;border:1px solid #3f51b5;border-radius:100%;cursor:pointer;display:block;height:1rem;margin-left:-0.5rem;margin-top:-0.65rem;outline:none;position:absolute;top:50%;-webkit-transition:-webkit-transform 0.3s ease-out,box-shadow 0.3s ease-out;-webkit-transition:transform 0.3s ease-out,box-shadow 0.3s ease-out;transition:transform 0.3s ease-out,box-shadow 0.3s ease-out;width:1rem;}.input-range__slider.jsx-1649775604:active{-webkit-transform:scale(1.3);-ms-transform:scale(1.3);transform:scale(1.3);}.input-range__slider.jsx-1649775604:focus{box-shadow:0 0 0 5px rgba(63,81,181,0.2);}.input-range--disabled.jsx-1649775604 .input-range__slider.jsx-1649775604{background:#cccccc;border:1px solid #cccccc;box-shadow:none;-webkit-transform:none;-ms-transform:none;transform:none;}.input-range__slider-container.jsx-1649775604{-webkit-transition:left 0.3s ease-out;transition:left 0.3s ease-out;}.input-range__label.jsx-1649775604{color:#aaaaaa;font-size:0.8rem;-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0);white-space:nowrap;}.input-range__label--min.jsx-1649775604,.input-range__label--max.jsx-1649775604{bottom:-1.4rem;position:absolute;}.input-range__label--min.jsx-1649775604{left:0;}.input-range__label--max.jsx-1649775604{right:0;}.input-range__label--value.jsx-1649775604{position:absolute;top:-1.8rem;}.input-range__label-container.jsx-1649775604{left:-50%;position:relative;}.input-range__label--max.jsx-1649775604 .input-range__label-container.jsx-1649775604{left:50%;}.input-range__track.jsx-1649775604{background:#eeeeee;border-radius:0.3rem;cursor:pointer;display:block;height:0.3rem;position:relative;-webkit-transition:left 0.3s ease-out,width 0.3s ease-out;transition:left 0.3s ease-out,width 0.3s ease-out;}.input-range--disabled.jsx-1649775604 .input-range__track.jsx-1649775604{background:#eeeeee;}.input-range__track--background.jsx-1649775604{left:0;margin-top:-0.15rem;position:absolute;right:0;top:50%;}.input-range__track--active.jsx-1649775604{background:#3f51b5;}.input-range.jsx-1649775604{height:1rem;position:relative;margin-top:1.2em;margin-bottom:1.4em;}.Popover.jsx-1649775604{z-index:2000;}.Popover-body.jsx-1649775604{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:.5rem 1rem;background:white;border-radius:0.3rem;opacity:.95;box-shadow:rgba(0,0,0,0.12) 0 1px 6px,rgba(0,0,0,0.12) 0 1px 4px;font-size:14px;}.Popover-tipShape.jsx-1649775604{fill:" + __WEBPACK_IMPORTED_MODULE_0__colors__["a" /* backGroundBlue */] + ";}.Popover-white.jsx-1649775604 .Popover-tipShape.jsx-1649775604{fill:#00bcd4;}.Popover-white.jsx-1649775604 .Popover-body.jsx-1649775604{background:white;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImlucHV0LXJhbmdlLXN0eWxlLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1pQixBQUdtQixBQWVPLEFBRXVCLEFBRXpCLEFBTVMsQUFHaEIsQUFPQyxBQUlSLEFBR0MsQUFHVSxBQUlSLEFBR0MsQUFHUSxBQVFFLEFBR2QsQUFPWSxBQUdQLEFBT0csQUFHTyxBQVdjLEFBSXJCLEFBSUksT0FsRVgsQUE0QlksQ0F6QlgsQ0FVRyxDQUZNLEVBMkJBLENBT3BCLEFBa0JBLENBekVtQixDQU9DLEVBc0VwQixDQTVEYyxDQTFCZSxBQW9DTixBQU9DLEFBVUYsUUFMRixDQWxCQyxFQUpOLEFBZ0NJLENBaERPLEVBTUwsQ0E4RHJCLE1BekNpQixDQXhDZ0MsR0FJN0IsQ0FnRFYsRUFVWSxNQVRaLEVBWk0sS0FwQ0csQ0FyQkUsQUFxRVYsTUFVWCxDQXZEaUMsQ0FrQ2pCLE1BNUNVLEtBYkMsR0EwRFAsa0JBQ2lDLENBMEIzQixHQXBGTCxVQTRCQSxFQVRELE9BbEJILFVBMkJLLEtBMUJOLGNBQ0YsWUFDUSxlQWlGQyxLQWhGRCxjQWlGRCxNQWhGTixJQW9EdUMsT0E2QjdCLEVBaEZMLGtCQUNWLENBZ0ZNLE9BL0UrQyxLQWdGYSxpRUFDekQsZUFDbkIsdUhBakZhLFdBQUMiLCJmaWxlIjoiaW5wdXQtcmFuZ2Utc3R5bGUuanMiLCJzb3VyY2VSb290IjoiQzovVXNlcnMvRGFuaWVsL0Rlc2t0b3AvQ3VycmVudCBDbGFzc2VzL1NlbmlvciBEZXNpZ24vUHJvamVjdC9NZWRpdW0gUG9zdCBzcmMvcmVhY3Qtc3Vkb2t1LWdhbWUiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgaW1wb3J0L25vLWV4dHJhbmVvdXMtZGVwZW5kZW5jaWVzXHJcbmltcG9ydCBjc3MgZnJvbSAnc3R5bGVkLWpzeC9jc3MnO1xyXG5pbXBvcnQge2JhY2tHcm91bmRCbHVlfSBmcm9tIFwiLi9jb2xvcnNcIjtcclxuXHJcbi8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSBuby1sb25lLWJsb2Nrc1xyXG57IC8qIGxhbmd1YWdlPUNTUyAqLyB9XHJcbmNvbnN0IFN0eWxlID0gY3NzYFxyXG4uaW5wdXQtcmFuZ2VfX3NsaWRlciB7XHJcbiAgYXBwZWFyYW5jZTogbm9uZTtcclxuICBiYWNrZ3JvdW5kOiAjM2Y1MWI1O1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICMzZjUxYjU7XHJcbiAgYm9yZGVyLXJhZGl1czogMTAwJTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgaGVpZ2h0OiAxcmVtO1xyXG4gIG1hcmdpbi1sZWZ0OiAtMC41cmVtO1xyXG4gIG1hcmdpbi10b3A6IC0wLjY1cmVtO1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogNTAlO1xyXG4gIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzIGVhc2Utb3V0LCBib3gtc2hhZG93IDAuM3MgZWFzZS1vdXQ7XHJcbiAgd2lkdGg6IDFyZW07IH1cclxuICAuaW5wdXQtcmFuZ2VfX3NsaWRlcjphY3RpdmUge1xyXG4gICAgdHJhbnNmb3JtOiBzY2FsZSgxLjMpOyB9XHJcbiAgLmlucHV0LXJhbmdlX19zbGlkZXI6Zm9jdXMge1xyXG4gICAgYm94LXNoYWRvdzogMCAwIDAgNXB4IHJnYmEoNjMsIDgxLCAxODEsIDAuMik7IH1cclxuICAuaW5wdXQtcmFuZ2UtLWRpc2FibGVkIC5pbnB1dC1yYW5nZV9fc2xpZGVyIHtcclxuICAgIGJhY2tncm91bmQ6ICNjY2NjY2M7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjY2NjO1xyXG4gICAgYm94LXNoYWRvdzogbm9uZTtcclxuICAgIHRyYW5zZm9ybTogbm9uZTsgfVxyXG5cclxuLmlucHV0LXJhbmdlX19zbGlkZXItY29udGFpbmVyIHtcclxuICB0cmFuc2l0aW9uOiBsZWZ0IDAuM3MgZWFzZS1vdXQ7IH1cclxuXHJcbi5pbnB1dC1yYW5nZV9fbGFiZWwge1xyXG4gIGNvbG9yOiAjYWFhYWFhO1xyXG4gIGZvbnQtc2l6ZTogMC44cmVtO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWigwKTtcclxuICB3aGl0ZS1zcGFjZTogbm93cmFwOyB9XHJcblxyXG4uaW5wdXQtcmFuZ2VfX2xhYmVsLS1taW4sXHJcbi5pbnB1dC1yYW5nZV9fbGFiZWwtLW1heCB7XHJcbiAgYm90dG9tOiAtMS40cmVtO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTsgfVxyXG5cclxuLmlucHV0LXJhbmdlX19sYWJlbC0tbWluIHtcclxuICBsZWZ0OiAwOyB9XHJcblxyXG4uaW5wdXQtcmFuZ2VfX2xhYmVsLS1tYXgge1xyXG4gIHJpZ2h0OiAwOyB9XHJcblxyXG4uaW5wdXQtcmFuZ2VfX2xhYmVsLS12YWx1ZSB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogLTEuOHJlbTsgfVxyXG5cclxuLmlucHV0LXJhbmdlX19sYWJlbC1jb250YWluZXIge1xyXG4gIGxlZnQ6IC01MCU7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlOyB9XHJcbiAgLmlucHV0LXJhbmdlX19sYWJlbC0tbWF4IC5pbnB1dC1yYW5nZV9fbGFiZWwtY29udGFpbmVyIHtcclxuICAgIGxlZnQ6IDUwJTsgfVxyXG5cclxuLmlucHV0LXJhbmdlX190cmFjayB7XHJcbiAgYmFja2dyb3VuZDogI2VlZWVlZTtcclxuICBib3JkZXItcmFkaXVzOiAwLjNyZW07XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIGhlaWdodDogMC4zcmVtO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB0cmFuc2l0aW9uOiBsZWZ0IDAuM3MgZWFzZS1vdXQsIHdpZHRoIDAuM3MgZWFzZS1vdXQ7IH1cclxuICAuaW5wdXQtcmFuZ2UtLWRpc2FibGVkIC5pbnB1dC1yYW5nZV9fdHJhY2sge1xyXG4gICAgYmFja2dyb3VuZDogI2VlZWVlZTsgfVxyXG5cclxuLmlucHV0LXJhbmdlX190cmFjay0tYmFja2dyb3VuZCB7XHJcbiAgbGVmdDogMDtcclxuICBtYXJnaW4tdG9wOiAtMC4xNXJlbTtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgcmlnaHQ6IDA7XHJcbiAgdG9wOiA1MCU7IH1cclxuXHJcbi5pbnB1dC1yYW5nZV9fdHJhY2stLWFjdGl2ZSB7XHJcbiAgYmFja2dyb3VuZDogIzNmNTFiNTsgfVxyXG5cclxuLmlucHV0LXJhbmdlIHtcclxuICBoZWlnaHQ6IDFyZW07XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIG1hcmdpbi10b3A6IDEuMmVtO1xyXG4gIG1hcmdpbi1ib3R0b206IDEuNGVtO1xyXG59XHJcbiAgXHJcbi5Qb3BvdmVyIHtcclxuICAgIHotaW5kZXg6IDIwMDA7XHJcbn1cclxuLlBvcG92ZXItYm9keSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBwYWRkaW5nOiAuNXJlbSAxcmVtO1xyXG4gICAgYmFja2dyb3VuZDogd2hpdGU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwLjNyZW07XHJcbiAgICBvcGFjaXR5OiAuOTU7XHJcbiAgICBib3gtc2hhZG93OiByZ2JhKDAsIDAsIDAsIDAuMTIpIDAgMXB4IDZweCwgcmdiYSgwLCAwLCAwLCAwLjEyKSAwIDFweCA0cHg7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbn1cclxuXHJcbi5Qb3BvdmVyLXRpcFNoYXBlIHtcclxuICAgIGZpbGw6ICR7YmFja0dyb3VuZEJsdWV9O1xyXG59XHJcblxyXG4uUG9wb3Zlci13aGl0ZSAuUG9wb3Zlci10aXBTaGFwZSB7XHJcbiAgICBmaWxsOiAjMDBiY2Q0O1xyXG59XHJcblxyXG4uUG9wb3Zlci13aGl0ZSAuUG9wb3Zlci1ib2R5IHtcclxuICAgIGJhY2tncm91bmQ6IHdoaXRlO1xyXG59XHJcbiAgYDtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IFN0eWxlO1xyXG4iXX0= */\n/*@ sourceURL=input-range-style.js */";
-Style.__scopedHash = "1649775604";
-/* harmony default export */ __webpack_exports__["a"] = (Style);
-
-/***/ }),
+webpackHotUpdate(4,{
 
 /***/ "./pages/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__("styled-jsx/style");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__("./node_modules/styled-jsx/style.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_immutable__ = __webpack_require__("immutable");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_immutable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_immutable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_immutable__ = __webpack_require__("./node_modules/immutable/dist/immutable.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__("./node_modules/prop-types/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_head__ = __webpack_require__("next/head");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_head__ = __webpack_require__("./node_modules/next/head.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_color__ = __webpack_require__("color");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_color__ = __webpack_require__("./node_modules/color/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_color___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_color__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_input_range__ = __webpack_require__("react-input-range");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_input_range__ = __webpack_require__("./node_modules/react-input-range/lib/js/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_input_range___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_input_range__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__input_range_style__ = __webpack_require__("./input-range-style.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sudoku__ = __webpack_require__("./sudoku.js");
@@ -334,6 +26,12 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _jsxFileName = 'C:\\Users\\Daniel\\Desktop\\Current Classes\\Senior Design\\Project\\Medium Post src\\react-sudoku-game\\pages\\index.js';
 
+
+(function () {
+  var enterModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").enterModule;
+
+  enterModule && enterModule(module);
+})();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -618,7 +316,7 @@ Cell.propTypes = {
   // if this was prefilled as a part of the puzzle
   prefilled: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.bool.isRequired,
   // current notes taken on the cell
-  notes: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.instanceOf(__WEBPACK_IMPORTED_MODULE_2_immutable__["Set"]),
+  notes: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.instanceOf(__WEBPACK_IMPORTED_MODULE_2_immutable__["b" /* Set */]),
   // if the current cell does not satisfy the game constraint
   conflict: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.bool.isRequired
 };
@@ -725,7 +423,7 @@ function makeBoard(_ref5) {
       };
     });
   });
-  return Object(__WEBPACK_IMPORTED_MODULE_2_immutable__["fromJS"])({ puzzle: result, selected: false, choices: { rows: rows, columns: columns, squares: squares } });
+  return Object(__WEBPACK_IMPORTED_MODULE_2_immutable__["c" /* fromJS */])({ puzzle: result, selected: false, choices: { rows: rows, columns: columns, squares: squares } });
 }
 
 /**
@@ -793,7 +491,7 @@ var Index = function (_Component) {
 
       var board = makeBoard({ puzzle: puzzle });
       _this.setState({
-        board: board, history: __WEBPACK_IMPORTED_MODULE_2_immutable__["List"].of(board), historyOffSet: 0, solution: solution
+        board: board, history: __WEBPACK_IMPORTED_MODULE_2_immutable__["a" /* List */].of(board), historyOffSet: 0, solution: solution
       });
     }, _this.addNumberAsNote = function (number) {
       var board = _this.state.board;
@@ -813,7 +511,7 @@ var Index = function (_Component) {
           x: x, y: y, number: currentValue, fill: false, board: _this.state.board
         });
       }
-      var notes = selectedCell.get('notes') || Object(__WEBPACK_IMPORTED_MODULE_2_immutable__["Set"])();
+      var notes = selectedCell.get('notes') || Object(__WEBPACK_IMPORTED_MODULE_2_immutable__["b" /* Set */])();
       if (notes.has(number)) {
         notes = notes.delete(number);
       } else {
@@ -1343,262 +1041,82 @@ var Index = function (_Component) {
         })
       );
     }
+  }, {
+    key: '__reactstandin__regenerateByEval',
+    value: function __reactstandin__regenerateByEval(key, code) {
+      this[key] = eval(code);
+    }
   }]);
 
   return Index;
 }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+var _default = Index;
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
 
-/***/ }),
+(function () {
+  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/patch.js").default;
 
-/***/ "./sudoku.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").leaveModule;
 
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["d"] = range;
-/* harmony export (immutable) */ __webpack_exports__["b"] = makePuzzle;
-/* harmony export (immutable) */ __webpack_exports__["a"] = isPeer;
-/* harmony export (immutable) */ __webpack_exports__["c"] = pluck;
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-function randomChoice(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
-
-function range(n) {
-  return Array.from(Array(n).keys());
-}
-
-// TODO use immutable when this is all working
-function makePuzzle() {
-  while (true) {
-    try {
-      var _ret = function () {
-        var puzzle = Array.from(Array(9).keys()).map(function () {
-          return Array.from(Array(9).keys());
-        });
-        var rows = Array.from(Array(9).keys()).map(function () {
-          return new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-        });
-        var columns = Array.from(Array(9).keys()).map(function () {
-          return new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-        });
-        var squares = Array.from(Array(9).keys()).map(function () {
-          return new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-        });
-        Array.from(Array(9).keys()).forEach(function (i) {
-          Array.from(Array(9).keys()).forEach(function (j) {
-            var row = rows[i];
-            var column = columns[j];
-            var square = squares[Math.floor(i / 3) * 3 + Math.floor(j / 3)];
-            var choices = [].concat(_toConsumableArray(row)).filter(function (x) {
-              return column.has(x);
-            }).filter(function (x) {
-              return square.has(x);
-            });
-            var choice = randomChoice(choices);
-            if (!choice) {
-              // eslint-disable-next-line no-throw-literal
-              throw 'dead end';
-            }
-            puzzle[i][j] = choice;
-            column.delete(choice);
-            row.delete(choice);
-            square.delete(choice);
-          });
-        });
-        return {
-          v: puzzle
-        };
-      }();
-
-      if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
-    } catch (e) {
-      // eslint-disable-next-line no-continue
-      continue;
-    }
+  if (!reactHotLoader) {
+    return;
   }
-}
 
-/**
- * Answers the question: can the cell (i,j) in the puzzle contain the number
- in cell "c"
- * @param puzzle
- * @param i
- * @param j
- * @param c
- */
-function canBeA(puzzle, i, j, c) {
-  var x = Math.floor(c / 9);
-  var y = c % 9;
-  var value = puzzle[x][y];
-  if (puzzle[i][j] === value) return true;
-  if (puzzle[i][j] > 0) return false;
-  // if not the cell itself, and the mth cell of the group contains the value v, then "no"
-  // eslint-disable-next-line guard-for-in,no-restricted-syntax
-  for (var m in Array.from(Array(9).keys())) {
-    var rowPeer = { x: m, y: j };
-    var columnPeer = { x: i, y: m };
-    var SquarePeer = {
-      x: Math.floor(i / 3) * 3 + Math.floor(m / 3),
-      y: Math.floor(j / 3) * 3 + m % 3
-    };
-    if (!(rowPeer.x === x && rowPeer.y === y) && puzzle[(rowPeer.x, rowPeer.y)] === value) return false;
-    if (!(columnPeer.x === x && columnPeer.y === y) && puzzle[(columnPeer.x, columnPeer.y)] === value) return false;
-    if (!(SquarePeer.x === x && SquarePeer.y === y) && puzzle[(SquarePeer.x, SquarePeer.y)] === value) return false;
-  }
-  return true;
-}
+  reactHotLoader.register(Description, 'Description', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(cellWidth, 'cellWidth', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(LightBlue100, 'LightBlue100', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(LightBlue200, 'LightBlue200', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(LightBlue300, 'LightBlue300', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(Indigo700, 'Indigo700', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(DeepOrange200, 'DeepOrange200', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(DeepOrange600, 'DeepOrange600', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(ControlNumberColor, 'ControlNumberColor', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(CellStyle, 'CellStyle', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(ActionsStyle, 'ActionsStyle', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(ControlStyle, 'ControlStyle', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(NumberControlStyle, 'NumberControlStyle', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(PuzzleStyle, 'PuzzleStyle', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(CirculuarProgressStyle, 'CirculuarProgressStyle', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(CircularPathD, 'CircularPathD', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(getBackGroundColor, 'getBackGroundColor', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(getFontColor, 'getFontColor', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(NumberControl, 'NumberControl', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(Cell, 'Cell', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(CirclularProgress, 'CirclularProgress', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(getClickHandler, 'getClickHandler', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(makeCountObject, 'makeCountObject', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(makeBoard, 'makeBoard', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(updateBoardWithNumber, 'updateBoardWithNumber', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(getNumberOfGroupsAssignedForNumber, 'getNumberOfGroupsAssignedForNumber', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(Index, 'Index', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  reactHotLoader.register(_default, 'default', 'C:/Users/Daniel/Desktop/Current Classes/Senior Design/Project/Medium Post src/react-sudoku-game/pages/index.js');
+  leaveModule(module);
+})();
 
-/**
- *
- * @param a
- * @param b
- * @returns {boolean}
- */
-function isPeer(a, b) {
-  if (!a || !b) return false;
-  var squareA = Math.floor(a.x / 3) * 3 + Math.floor(a.y / 3);
-  var squareB = Math.floor(b.x / 3) * 3 + Math.floor(b.y / 3);
-  return a.x === b.x || a.y === b.y || squareA === squareB;
-}
+;
+    (function (Component, route) {
+      if(!Component) return
+      if (false) return
+      module.hot.accept()
+      Component.__route = route
 
-function pluck(allCells) {
-  var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      if (module.hot.status() === 'idle') return
 
-  var puzzle = JSON.parse(JSON.stringify(allCells));
-  /**
-     * starts with a set of all 81 cells, and tries to remove one (randomly) at a time,
-     * but not before checking that the cell can still be deduced from the remaining cells.
-     * @type {Set}
-     */
-  var cells = new Set(Array.from(Array(81).keys()));
-  var cellsLeft = new Set(cells);
+      var components = next.router.components
+      for (var r in components) {
+        if (!components.hasOwnProperty(r)) continue
 
-  var _loop = function _loop() {
-    var cell = randomChoice([].concat(_toConsumableArray(cells)));
-    var x = Math.floor(cell / 9);
-    var y = cell % 9;
-    cellsLeft.delete(cell);
-    /**
-         * row, column and square record whether another cell in those groups could also take
-         * on the value we are trying to pluck. (If another cell can, then we can't use the
-         * group to deduce this value.) If all three groups are True, then we cannot pluck
-         * this cell and must try another one.
-         */
-    var row = false;
-    var column = false;
-    var square = false;
-    range(9).forEach(function (i) {
-      var rowPeer = { x: i, y: y };
-      var columnPeer = { x: x, y: i };
-      var squarePeer = {
-        x: Math.floor(Math.floor(cell / 9) / 3) * 3 + Math.floor(i / 3),
-        y: Math.floor(cell / 9) % 3 * 3 + i % 3
-      };
-      if (rowPeer.x !== x) {
-        row = canBeA(puzzle, rowPeer.x, rowPeer.y, cell);
+        if (components[r].Component.__route === route) {
+          next.router.update(r, Component)
+        }
       }
-      if (columnPeer.y !== y) {
-        column = canBeA(puzzle, columnPeer.x, columnPeer.y, cell);
-      }
-      if (squarePeer.x !== x && squarePeer.y !== y) {
-        square = canBeA(puzzle, squarePeer.x, squarePeer.y, cell);
-      }
-    });
-    if (row && column && square) {
-      // eslint-disable-next-line no-continue
-      return 'continue';
-    } else {
-      // this is a pluckable cell!
-      // eslint-disable-next-line no-param-reassign
-      puzzle[x][y] = 0; // 0 denotes a blank cell
-      /**
-             * remove from the set of visible cells (pluck it)
-             * we don't need to reset "cellsleft" because if a cell was not pluckable
-             * earlier, then it will still not be pluckable now (with less information
-             * on the board).
-             */
-      cells.delete(cell);
-    }
-  };
-
-  while (cellsLeft.size && cells.size > n) {
-    var _ret2 = _loop();
-
-    if (_ret2 === 'continue') continue;
-  }
-  return { puzzle: puzzle, size: cells.size };
-}
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("./pages/index.js");
-
-
-/***/ }),
-
-/***/ "color":
-/***/ (function(module, exports) {
-
-module.exports = require("color");
-
-/***/ }),
-
-/***/ "immutable":
-/***/ (function(module, exports) {
-
-module.exports = require("immutable");
-
-/***/ }),
-
-/***/ "next/head":
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "prop-types":
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-
-/***/ "react":
-/***/ (function(module, exports) {
-
-module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-input-range":
-/***/ (function(module, exports) {
-
-module.exports = require("react-input-range");
-
-/***/ }),
-
-/***/ "react-popover":
-/***/ (function(module, exports) {
-
-module.exports = require("react-popover");
-
-/***/ }),
-
-/***/ "styled-jsx/style":
-/***/ (function(module, exports) {
-
-module.exports = require("styled-jsx/style");
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
+  
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ })
 
-/******/ });
-//# sourceMappingURL=index.js.map
+})
+//# sourceMappingURL=4.80241688dc63e6fe8dfd.hot-update.js.map

@@ -225,14 +225,14 @@ NumberControl.defaultProps = {
 
 const Cell = (props) => {
   const {
-    value, onClick, isPeer, isSelected, sameValue, prefilled, notes, conflict,
+    value, onClick, onKeyPress, isPeer, isSelected, sameValue, prefilled, notes, conflict,
   } = props;
   const backgroundColor = getBackGroundColor({
     conflict, isPeer, sameValue, isSelected,
   });
   const fontColor = getFontColor({ conflict, prefilled, value });
   return (
-    <div className="cell" onClick={onClick}>
+    <div className="cell" onClick={onClick} onKeyDown={onKeyPress} tabIndex="0">
       {
         notes ?
           range(9).map(i =>
@@ -262,7 +262,7 @@ Cell.propTypes = {
   // cell click handler
   onClick: PropTypes.func.isRequired,
   // keyboard input handler
-  onKeypress: PropTypes.func.isRequired,
+  onKeyPress: PropTypes.func.isRequired,
   // if the cell is a peer of the selected cell
   isPeer: PropTypes.bool.isRequired,
   // if the cell is selected by the user
@@ -385,6 +385,7 @@ function getNumberOfGroupsAssignedForNumber(number, groups) {
   return groups.reduce((accumulator, row) =>
     accumulator + (row.get(number) > 0 ? 1 : 0), 0);
 }
+
 // eslint-disable-next-line react/no-multi-comp
 export default class Index extends Component {
   state = {};
@@ -404,6 +405,7 @@ export default class Index extends Component {
         });
     }
   }
+
   getSelectedCell() {
     const { board } = this.state;
     const selected = board.get('selected');
@@ -559,22 +561,7 @@ export default class Index extends Component {
   }
 
   handleKeyDown = (event) => {
-    console.log(event.key);
-    switch (event.key) {
-      case "1":
-      case "2":
-      case "3":
-      case "4":
-      case "5":
-      case "6":
-      case "7":
-      case "8":
-      case "9":
-        this.fillCellWithNumber(event.key);
-        break;
-      default:
-        break;
-    }
+    this.fillNumber(Number(event.key));
   };
 
   renderCell(cell, x, y) {
@@ -596,7 +583,7 @@ export default class Index extends Component {
       value={value}
       onClick={() => { this.selectCell(x, y); }}
       // A good spot to handle keypresses?
-      onKeyDown={(event) => this.handleKeyDown(event)}
+      onKeyPress={(event) => this.handleKeyDown(event)}
       key={y}
       x={x}
       y={y}
