@@ -201,34 +201,6 @@ function getFontColor({ value, conflict, prefilled }) {
   return false;
 }
 
-class GenerationUI extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { value: 30 };
-  }
-
-  componentDidMount() {
-    this.generateGame();
-  }
-
-  generateGame = () => {
-    this.props.generateGame(this.state.value);
-  }
-
-  render() {
-    return (
-      <div className="generation">
-        <div className="copy">Building board with {this.state.value} cells prefilled...</div>
-      </div>
-    );
-  }
-}
-
-GenerationUI.propTypes = {
-  generateGame: PropTypes.func.isRequired,
-};
-
 const NumberControl = ({ number, onClick, completionPercentage }) => (
   <div
     key={number}
@@ -723,12 +695,6 @@ export default class Index extends Component {
     );
   }
 
-  renderGenerationUI() {
-    return (
-      <GenerationUI generateGame={this.generateGame} />
-    );
-  }
-
   renderHeader() {
     return (
       <div className="header">
@@ -767,6 +733,8 @@ export default class Index extends Component {
 
   render() {
     const { board } = this.state;
+    if (!board ) 
+      this.generateGame();
     return (
       <div className="body">
         <NextHead>
@@ -780,7 +748,6 @@ export default class Index extends Component {
           <meta property="og:description" content={Description} />
           <meta property="og:image" content="https://sudoku.sitianliu.com/static/og-image.png" />
         </NextHead>
-        {!board && this.renderGenerationUI()}
         {board && this.renderHeader()}
         {board && this.renderPuzzle()}
         {board && this.renderControls()}
