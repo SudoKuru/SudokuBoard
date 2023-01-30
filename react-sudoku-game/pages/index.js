@@ -14,6 +14,7 @@ import LoupeIcon from '../svg/loupe.svg';
 import RemoveIcon from '../svg/remove.svg';
 import ReloadIcon from '../svg/reload.svg';
 import ReturnIcon from '../svg/return.svg';
+import PencilIcon from '../svg/pencil.svg';
 
 import { makePuzzle, pluck, isPeer as areCoordinatePeers, range } from '../sudoku';
 import { backGroundBlue } from '../colors';
@@ -282,26 +283,6 @@ Cell.defaultProps = {
   value: null,
 };
 
-const CirclularProgress = ({ percent }) => (
-  <svg viewBox="0 0 36 36" className="circular-progress">
-    <path
-      className="circle-bg"
-      d={CircularPathD}
-    />
-    <path
-      className="circle"
-      strokeDasharray={`${percent * 100}, 100`}
-      d={CircularPathD}
-    />
-    { /* language=CSS */ }
-    <style jsx>{CirculuarProgressStyle}</style>
-  </svg>
-);
-
-CirclularProgress.propTypes = {
-  percent: PropTypes.number.isRequired,
-};
-
 function getClickHandler(onClick, onDoubleClick, delay = 250) {
   let timeoutID = null;
   return (event) => {
@@ -350,7 +331,7 @@ function makeBoard({ puzzle }) {
       };
     })
   ));
-  return fromJS({ puzzle: result, selected: false, choices: { rows, columns, squares } });
+  return fromJS({ puzzle: result, selected: false, inNoteMode: false, choices: { rows, columns, squares } });
 }
 
 /**
@@ -496,6 +477,13 @@ export default class Index extends Component {
     }
   };
 
+  toggleNoteMode = () => {
+    let { board } = this.state;
+    let currNoteMode = board.get('inNoteMode');
+    board = board.set('inNoteMode', !currNoteMode);
+    this.setState({ board });
+  }
+
   eraseSelected = () => {
     const selectedCell = this.getSelectedCell();
     if (!selectedCell) return;
@@ -561,7 +549,13 @@ export default class Index extends Component {
   }
 
   handleKeyDown = (event) => {
-    this.fillNumber(Number(event.key));
+    let { board } = this.state;
+    let inNoteMode = board.get('inNoteMode');
+    let numberInput = Number(event.key);
+    
+    if (inNoteMode) this.addNumberAsNote(numberInput);
+    else this.fillNumber(numberInput);
+    
   };
 
   renderCell(cell, x, y) {
@@ -616,18 +610,21 @@ export default class Index extends Component {
       </div>
     );
   }
-
+  /*<div className="action redo" onClick={history.size ? this.redo : null}>
+          <ReloadIcon />Redo
+        </div> */
   renderActions() {
-    const { history } = this.state;
+    const { board, history } = this.state;
     const selectedCell = this.getSelectedCell();
     const prefilled = selectedCell && selectedCell.get('prefilled');
+    const inNoteMode = board.get('inNoteMode');
     return (
       <div className="actions">
         <div className="action" onClick={history.size ? this.undo : null}>
           <ReloadIcon />Undo
         </div>
-        <div className="action redo" onClick={history.size ? this.redo : null}>
-          <ReloadIcon />Redo
+        <div className="action note" onClick={this.toggleNoteMode}>
+          <ReloadIcon /> {inNoteMode ? "On" : "Off"}
         </div>
         <div className="action" onClick={!prefilled ? this.eraseSelected : null}>
           <RemoveIcon />Erase
@@ -720,7 +717,7 @@ export default class Index extends Component {
 
   render() {
     const { board } = this.state;
-    if (!board ) 
+    if (!board) 
       this.generateGame();
     return (
       <div className="body">
