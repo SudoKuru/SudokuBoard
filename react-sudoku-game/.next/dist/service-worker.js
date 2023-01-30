@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["bundles/pages/_document.js","54a8405575854f91a5c5757b82272cd9"],["bundles/pages/_error.js","2246dc2f04b18e34c65beef6c432b29c"],["bundles/pages/index.js","7058ab8777f058e170f141058988ba75"]];
+var precacheConfig = [["bundles/pages/_document.js","54a8405575854f91a5c5757b82272cd9"],["bundles/pages/_error.js","2246dc2f04b18e34c65beef6c432b29c"],["bundles/pages/index.js","0b15f08e210223545bebac5e9c23dae8"]];
 var cacheName = 'sw-precache-v3-sw-precache-webpack-plugin-' + (self.registration ? self.registration.scope : '');
 
 

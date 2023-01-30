@@ -118,7 +118,7 @@ const NumberControlStyle = css`
     height: 1.5em;
     color: ${ControlNumberColor};
     box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23);
-    border-radius: 50%;
+    border-radius: 100%;
 }
 .number > div {
     margin-top: .3em;
@@ -236,7 +236,7 @@ const NumberControl = ({ number, onClick, completionPercentage }) => (
     onClick={onClick}
   >
     <div>{number}</div>
-    <CirclularProgress percent={completionPercentage} />
+    {/* <CirclularProgress percent={completionPercentage} /> */}
     <style jsx>{NumberControlStyle}</style>
   </div>
 );
@@ -289,6 +289,8 @@ Cell.propTypes = {
   value: PropTypes.number,
   // cell click handler
   onClick: PropTypes.func.isRequired,
+  // keyboard input handler
+  onKeypress: PropTypes.func.isRequired,
   // if the cell is a peer of the selected cell
   isPeer: PropTypes.bool.isRequired,
   // if the cell is selected by the user
@@ -563,6 +565,9 @@ export default class Index extends Component {
   };
 
   selectCell = (x, y) => {
+
+    console.log("Cell Selected");
+
     let { board } = this.state;
     board = board.set('selected', { x, y });
     this.setState({ board });
@@ -580,6 +585,25 @@ export default class Index extends Component {
         ((Math.floor(i / 3)) * 3) + Math.floor(j / 3), value]) > 1;
     return rowConflict || columnConflict || squareConflict;
   }
+
+  handleKeyDown = (event) => {
+    console.log(event.key);
+    switch (event.key) {
+      case "1":
+      case "2":
+      case "3":
+      case "4":
+      case "5":
+      case "6":
+      case "7":
+      case "8":
+      case "9":
+        this.fillCellWithNumber(event.key);
+        break;
+      default:
+        break;
+    }
+  };
 
   renderCell(cell, x, y) {
     const { board } = this.state;
@@ -599,12 +623,15 @@ export default class Index extends Component {
       isPeer={peer}
       value={value}
       onClick={() => { this.selectCell(x, y); }}
+      // A good spot to handle keypresses?
+      onKeyDown={(event) => this.handleKeyDown(event)}
       key={y}
       x={x}
       y={y}
       conflict={conflict}
     />);
   }
+  
 
   renderNumberControl() {
     const selectedCell = this.getSelectedCell();
@@ -757,9 +784,6 @@ export default class Index extends Component {
         {board && this.renderHeader()}
         {board && this.renderPuzzle()}
         {board && this.renderControls()}
-        <div className="rooter">
-          Made with <span>❤️</span>️ By <a href="https://www.sitianliu.com/">Sitian Liu</a> | <a href="https://medium.com/@sitianliu_57680/building-a-sudoku-game-in-react-ca663915712">Blog Post</a>
-        </div>
         { /* language=CSS */ }
         <style jsx>{`
             :global(body), .body {

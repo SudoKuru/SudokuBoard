@@ -596,12 +596,12 @@ ControlStyle.__hash = '3736506914';
 ControlStyle.__scoped = ['.control.jsx-404884099{padding:0 2em;cursor:pointer;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;font-family:\'Special Elite\',cursive;-webkit-transition:filter .5s ease-in-out;transition:filter .5s ease-in-out;width:100%;}'];
 ControlStyle.__scopedHash = '404884099';
 {/* language=CSS */}
-var NumberControlStyle = ['.number{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:2em;margin:.1em;width:1.5em;height:1.5em;color:' + ControlNumberColor + ';box-shadow:0 1px 2px rgba(0,0,0,0.16),0 1px 2px rgba(0,0,0,0.23);border-radius:50%;}', '.number>div{margin-top:.3em;}'];
+var NumberControlStyle = ['.number{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:2em;margin:.1em;width:1.5em;height:1.5em;color:' + ControlNumberColor + ';box-shadow:0 1px 2px rgba(0,0,0,0.16),0 1px 2px rgba(0,0,0,0.23);border-radius:100%;}', '.number>div{margin-top:.3em;}'];
 
 // eslint-disable-next-line no-lone-blocks
-NumberControlStyle.__hash = '547487472';
-NumberControlStyle.__scoped = ['.number.jsx-1989098289{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:2em;margin:.1em;width:1.5em;height:1.5em;color:' + ControlNumberColor + ';box-shadow:0 1px 2px rgba(0,0,0,0.16),0 1px 2px rgba(0,0,0,0.23);border-radius:50%;}', '.number.jsx-1989098289>div.jsx-1989098289{margin-top:.3em;}'];
-NumberControlStyle.__scopedHash = '1989098289';
+NumberControlStyle.__hash = '1530312689';
+NumberControlStyle.__scoped = ['.number.jsx-2450883504{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:2em;margin:.1em;width:1.5em;height:1.5em;color:' + ControlNumberColor + ';box-shadow:0 1px 2px rgba(0,0,0,0.16),0 1px 2px rgba(0,0,0,0.23);border-radius:100%;}', '.number.jsx-2450883504>div.jsx-2450883504{margin-top:.3em;}'];
+NumberControlStyle.__scopedHash = '2450883504';
 {/* language=CSS */}
 var PuzzleStyle = ['.puzzle{margin-top:.5em;width:' + cellWidth * 9 + 'em;cursor:pointer;box-shadow:0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);}', '.row{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex:0;-ms-flex:0;flex:0;width:' + cellWidth * 9 + 'em;}', '.row:not(:last-child){border-bottom:1px solid black;}', '.row:nth-child(3n+3):not(:last-child){border-bottom:2px solid black !important;}'];
 
@@ -708,7 +708,6 @@ var pages_NumberControl = function NumberControl(_ref3) {
       },
       number
     ),
-    external__react__default.a.createElement(pages_CirclularProgress, { percent: completionPercentage }),
     external__react__default.a.createElement(style__default.a, {
       styleId: NumberControlStyle.__scopedHash,
       css: NumberControlStyle.__scoped
@@ -1020,10 +1019,30 @@ var pages_Index = function (_Component2) {
       }
       _this2.updateBoard(board);
     }, _this2.selectCell = function (x, y) {
+
+      console.log("Cell Selected");
+
       var board = _this2.state.board;
 
       board = board.set('selected', { x: x, y: y });
       _this2.setState({ board: board });
+    }, _this2.handleKeyDown = function (event) {
+      console.log(event.key);
+      switch (event.key) {
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+          _this2.fillCellWithNumber(event.key);
+          break;
+        default:
+          break;
+      }
     }, _temp), pages__possibleConstructorReturn(_this2, _ret);
   }
 
@@ -1103,6 +1122,10 @@ var pages_Index = function (_Component2) {
         value: value,
         onClick: function onClick() {
           _this3.selectCell(x, y);
+        }
+        // A good spot to handle keypresses?
+        , onKeyDown: function onKeyDown(event) {
+          return _this3.handleKeyDown(event);
         },
         key: y,
         x: x,
@@ -1316,34 +1339,6 @@ var pages_Index = function (_Component2) {
         board && this.renderHeader(),
         board && this.renderPuzzle(),
         board && this.renderControls(),
-        external__react__default.a.createElement(
-          'div',
-          {
-            className: 'jsx-389099333' + ' ' + 'rooter'
-          },
-          'Made with ',
-          external__react__default.a.createElement(
-            'span',
-            {
-              className: 'jsx-389099333'
-            },
-            '\u2764\uFE0F'
-          ),
-          '\uFE0F By ',
-          external__react__default.a.createElement(
-            'a',
-            { href: 'https://www.sitianliu.com/', className: 'jsx-389099333'
-            },
-            'Sitian Liu'
-          ),
-          ' | ',
-          external__react__default.a.createElement(
-            'a',
-            { href: 'https://medium.com/@sitianliu_57680/building-a-sudoku-game-in-react-ca663915712', className: 'jsx-389099333'
-            },
-            'Blog Post'
-          )
-        ),
         external__react__default.a.createElement(style__default.a, {
           styleId: '389099333',
           css: ['body,.body.jsx-389099333{font-family:\'Special Elite\',cursive;}', '.body.jsx-389099333{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;height:100vh;width:100vw;position:relative;}', '@media (min-width:800px) and (min-height:930px){.header,.puzzle,.controls{font-size:1.5em;}}', '@media (max-width:800px) and (min-width:600px){.header,.puzzle,.controls{font-size:1.2em;}}', '@media (max-height:930px) and (min-height:800px) and (min-width:600px){.header,.puzzle,.controls{font-size:1.2em;}}', '@media (max-height:800px) and (min-height:600px) and (min-width:370px){.header,.puzzle,.controls{font-size:1em;}}', '@media (max-width:370px){.header,.puzzle,.controls{font-size:.8em;}}', '@media (max-height:600px){.header,.puzzle,.controls{font-size:.8em;}}', 'body{margin:0;}', '.rooter.jsx-389099333{position:fixed;bottom:0;font-size:.8em;width:100%;text-align:center;}']
