@@ -45,6 +45,8 @@ const CellStyle = css`
     font-size: 1.1em;
     font-weight: bold;
     transition: background-color .3s ease-in-out;
+    outline: none;
+    box-shadow: none;
 }
 .cell:nth-child(3n+3):not(:last-child) {
     border-right: 2px solid black;
@@ -682,11 +684,11 @@ export default class Index extends Component {
   renderHeader() {
     return (
       <div className="header">
-        <div className="new-game" onClick={() => this.setState({ board: false })}>
+        {/* <div className="new-game" onClick={() => this.setState({ board: false })}>
           <ReturnIcon />
           <div>New Game</div>
         </div>
-        <Tip />
+        <Tip /> */}
         { /* language=CSS */ }
         <style jsx>{`
             .header {
