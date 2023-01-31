@@ -3,25 +3,25 @@ import React, { Component } from 'react';
 import { Set, List, fromJS } from 'immutable';
 import PropTypes from 'prop-types';
 import NextHead from 'next/head';
-import Color from 'color';
-import InputRange from 'react-input-range';
+// import Color from 'color';
+// import InputRange from 'react-input-range';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import css from 'styled-jsx/css';
 
 import RangeStyle from '../input-range-style';
-import LoupeIcon from '../svg/loupe.svg';
-import RemoveIcon from '../svg/remove.svg';
-import ReloadIcon from '../svg/reload.svg';
-import ReturnIcon from '../svg/return.svg';
-import PencilIcon from '../svg/pencil.svg';
+import EraseIcon from '../svg/erase.svg';
+import HintIcon from '../svg/hint.svg';
+import NoteIcon from '../svg/note.svg';
+import NoteOffIcon from '../svg/noteoff.svg';
+import UndoIcon from '../svg/undo.svg';
 
 import { makePuzzle, pluck, isPeer as areCoordinatePeers, range } from '../sudoku';
-import { backGroundBlue } from '../colors';
-import Tip from '../components/tool-tip';
+// import { backGroundBlue } from '../colors';
+// import Tip from '../components/tool-tip';
 
 
-const Description = 'Discover the next evolution of Sudoku with amazing graphics, animations, and user-friendly features. Enjoy a Sudoku experience like you never have before with customizable game generation, cell highlighting, intuitive controls and more!';
+const Description = '';
 const cellWidth = 2.5;
 
 const LightBlue100 = '#B3E5FC';
@@ -150,35 +150,6 @@ const PuzzleStyle = css`
     border-bottom: 2px solid black !important;
 }
 `;
-
-// eslint-disable-next-line no-lone-blocks
-{ /* language=CSS */ }
-const CirculuarProgressStyle = css`
-.circular-progress {
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: filter .4s ease-in-out;
-}
-
-.circle-bg {
-    fill: none;
-    stroke: #eee;
-    stroke-width: 3.8;
-}
-
-.circle {
-    stroke: ${ControlNumberColor};
-    transition: stroke-dasharray .4s ease-in-out;
-    fill: none;
-    stroke-width: 2.8;
-    stroke-linecap: round;
-}
-`;
-
-const CircularPathD = 'M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831';
 
 function getBackGroundColor({
   conflict, isPeer, sameValue, isSelected,
@@ -613,7 +584,7 @@ export default class Index extends Component {
     );
   }
   /*<div className="action redo" onClick={history.size ? this.redo : null}>
-          <ReloadIcon />Redo
+          <UndoIcon />Redo
         </div> */
   renderActions() {
     const { board, history } = this.state;
@@ -623,20 +594,20 @@ export default class Index extends Component {
     return (
       <div className="actions">
         <div className="action" onClick={history.size ? this.undo : null}>
-          <ReloadIcon />Undo
+          <UndoIcon />
         </div>
         <div className="action note" onClick={this.toggleNoteMode}>
-          <ReloadIcon /> {inNoteMode ? "On" : "Off"}
+          {inNoteMode ? <NoteIcon /> : <NoteOffIcon />}
         </div>
         <div className="action" onClick={!prefilled ? this.eraseSelected : null}>
-          <RemoveIcon />Erase
+          <EraseIcon />
         </div>
         <div
           className="action"
           onClick={!prefilled ?
           this.fillSelectedWithSolution : null}
         >
-          <LoupeIcon />Hint
+          <HintIcon />
         </div>
         <style jsx>{ActionsStyle}</style>
       </div>
@@ -668,12 +639,13 @@ export default class Index extends Component {
         { /* language=CSS */ }
         <style jsx>{`
             .controls {
-                margin-top: .3em;
+                margin-top: .25em;
                 display: flex;
-                flex-wrap: wrap;
+                align-items: center;
                 justify-content: center;
-                width: 100%;
+                flex-wrap: wrap;
                 padding: .5em 0;
+                width: 100%;
             }
         `}
         </style>
@@ -684,11 +656,6 @@ export default class Index extends Component {
   renderHeader() {
     return (
       <div className="header">
-        {/* <div className="new-game" onClick={() => this.setState({ board: false })}>
-          <ReturnIcon />
-          <div>New Game</div>
-        </div>
-        <Tip /> */}
         { /* language=CSS */ }
         <style jsx>{`
             .header {
