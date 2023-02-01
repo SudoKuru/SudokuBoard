@@ -250,21 +250,6 @@ Cell.defaultProps = {
   value: null,
 };
 
-function getClickHandler(onClick, onDoubleClick, delay = 250) {
-  let timeoutID = null;
-  return (event) => {
-    if (!timeoutID) {
-      timeoutID = setTimeout(() => {
-        onClick(event);
-        timeoutID = null;
-      }, delay);
-    } else {
-      timeoutID = clearTimeout(timeoutID);
-      onDoubleClick(event);
-    }
-  };
-}
-
 /**
  * make size 9 array of 0s
  * @returns {Array}
