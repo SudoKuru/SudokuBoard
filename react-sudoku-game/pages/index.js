@@ -2,9 +2,6 @@
 import React, { Component } from 'react';
 import { Set, List, fromJS } from 'immutable';
 import PropTypes from 'prop-types';
-import NextHead from 'next/head';
-// import Color from 'color';
-// import InputRange from 'react-input-range';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import css from 'styled-jsx/css';
@@ -17,9 +14,6 @@ import NoteOffIcon from '../svg/noteoff.svg';
 import UndoIcon from '../svg/undo.svg';
 
 import { makePuzzle, pluck, isPeer as areCoordinatePeers, range } from '../sudoku';
-// import { backGroundBlue } from '../colors';
-// import Tip from '../components/tool-tip';
-
 
 const Description = '';
 const cellWidth = 2.5;
@@ -101,7 +95,7 @@ const ControlStyle = css`
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    font-family: 'Special Elite', cursive;
+    font-family: "Inter", sans-serif;
     transition: filter .5s ease-in-out;
     width: 100%;
 }
@@ -117,14 +111,14 @@ const NumberControlStyle = css`
     align-items: center;
     font-size: 2em;
     margin: .1em;
-    width: 1.5em;
-    height: 1.5em;
-    color: ${ControlNumberColor};
-    box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23);
-    border-radius: 100%;
+    width: 1em;
+    height: 1em;
+    color: black;
+    border: 2px solid black;
+    border-radius: .15em;
 }
 .number > div {
-    margin-top: .3em;
+    margin-top: .0em;
 }
 `;
 
@@ -471,7 +465,6 @@ export default class Index extends Component {
     this.fillNumber(solution[x][y]);
   }
 
-
   // fill currently selected cell with number
   fillNumber = (number) => {
     let { board } = this.state;
@@ -537,8 +530,8 @@ export default class Index extends Component {
     const { value, prefilled, notes } = cell.toJSON();
     const conflict = this.isConflict(x, y);
     const peer = areCoordinatePeers({ x, y }, board.get('selected'));
-    const sameValue = !!(selected && selected.get('value')
-      && value === selected.get('value'));
+    const sameValue = !!(selected && selected.get('value') && 
+                         value === selected.get('value'));
 
     const isSelected = cell === selected;
     return (<Cell
@@ -549,7 +542,6 @@ export default class Index extends Component {
       isPeer={peer}
       value={value}
       onClick={() => { this.selectCell(x, y); }}
-      // A good spot to handle keypresses?
       onKeyPress={(event) => this.handleKeyDown(event)}
       key={y}
       x={x}
@@ -558,7 +550,6 @@ export default class Index extends Component {
     />);
   }
   
-
   renderNumberControl() {
     const selectedCell = this.getSelectedCell();
     const prefilled = selectedCell && selectedCell.get('prefilled');
@@ -583,9 +574,7 @@ export default class Index extends Component {
       </div>
     );
   }
-  /*<div className="action redo" onClick={history.size ? this.redo : null}>
-          <UndoIcon />Redo
-        </div> */
+
   renderActions() {
     const { board, history } = this.state;
     const selectedCell = this.getSelectedCell();
@@ -690,7 +679,6 @@ export default class Index extends Component {
       this.generateGame();
     return (
       <div className="body">
-        <NextHead>
           <title>Sudoku Evolved</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content={Description} />
@@ -700,14 +688,13 @@ export default class Index extends Component {
           <meta property="og:type" content="website" />
           <meta property="og:description" content={Description} />
           <meta property="og:image" content="https://sudoku.sitianliu.com/static/og-image.png" />
-        </NextHead>
         {board && this.renderHeader()}
         {board && this.renderPuzzle()}
         {board && this.renderControls()}
         { /* language=CSS */ }
         <style jsx>{`
             :global(body), .body {
-                font-family: 'Special Elite', cursive;
+              font-family: "Inter", sans-serif;
             }
             .body {
                 display: flex;
@@ -721,31 +708,6 @@ export default class Index extends Component {
             @media (min-width: 800px) and (min-height: 930px){
                 :global(.header, .puzzle, .controls) {
                     font-size: 1.5em;
-                }
-            }
-            @media (max-width: 800px) and (min-width: 600px){
-                :global(.header, .puzzle, .controls) {
-                    font-size: 1.2em;
-                }
-            }
-            @media (max-height: 930px) and (min-height: 800px) and (min-width: 600px){
-                :global(.header, .puzzle, .controls) {
-                    font-size: 1.2em;
-                }
-            }
-            @media (max-height: 800px) and (min-height: 600px) and (min-width: 370px){
-                :global(.header, .puzzle, .controls) {
-                    font-size: 1em;
-                }
-            }
-            @media (max-width: 370px){
-                :global(.header, .puzzle, .controls) {
-                    font-size: .8em;
-                }
-            }
-            @media (max-height: 600px){
-                :global(.header, .puzzle, .controls) {
-                    font-size: .8em;
                 }
             }
             :global(body) {

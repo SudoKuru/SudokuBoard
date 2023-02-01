@@ -2783,6 +2783,11 @@
     "strip-ansi" "^4.0.0"
     "through" "^2.3.6"
 
+"inter-ui@^3.19.3":
+  "integrity" "sha512-5FG9fjuYOXocIfjzcCBhICL5cpvwEetseL3FU6tP3d6Bn7g8wODhB+I9RNGRTizCT7CUG4GOK54OPxqq3msQgg=="
+  "resolved" "https://registry.npmjs.org/inter-ui/-/inter-ui-3.19.3.tgz"
+  "version" "3.19.3"
+
 "interpret@^1.0.0":
   "integrity" "sha512-CLM8SNMDu7C5psFCn6Wg/tgpj/bKAg7hc2gWqcuR9OD5Ft9PhBpIu8PLicPeis+xDd6YX2ncI8MCA64I9tftIA=="
   "resolved" "https://registry.npmjs.org/interpret/-/interpret-1.1.0.tgz"
