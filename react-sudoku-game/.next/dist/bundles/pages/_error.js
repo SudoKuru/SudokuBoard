@@ -72,18 +72,26 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ 0:
+/***/ "./node_modules/next/dist/pages/_error.js":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("C:\\Users\\arthu\\Repos\\SudokuBoard\\react-sudoku-game\\node_modules\\next\\dist\\pages\\_error.js");
+module.exports = __webpack_require__("next/error")
 
 
 /***/ }),
 
-/***/ "C:\\Users\\arthu\\Repos\\SudokuBoard\\react-sudoku-game\\node_modules\\next\\dist\\pages\\_error.js":
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("./node_modules/next/dist/pages/_error.js");
+
+
+/***/ }),
+
+/***/ "next/error":
 /***/ (function(module, exports) {
 
-module.exports = require("C:\\Users\\arthu\\Repos\\SudokuBoard\\react-sudoku-game\\node_modules\\next\\dist\\pages\\_error.js");
+module.exports = require("next/error");
 
 /***/ })
 

@@ -72,18 +72,26 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ 1:
+/***/ "./node_modules/next/dist/pages/_document.js":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("C:\\Users\\arthu\\Repos\\SudokuBoard\\react-sudoku-game\\node_modules\\next\\dist\\pages\\_document.js");
+module.exports = __webpack_require__("next/document")
 
 
 /***/ }),
 
-/***/ "C:\\Users\\arthu\\Repos\\SudokuBoard\\react-sudoku-game\\node_modules\\next\\dist\\pages\\_document.js":
+/***/ 1:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("./node_modules/next/dist/pages/_document.js");
+
+
+/***/ }),
+
+/***/ "next/document":
 /***/ (function(module, exports) {
 
-module.exports = require("C:\\Users\\arthu\\Repos\\SudokuBoard\\react-sudoku-game\\node_modules\\next\\dist\\pages\\_document.js");
+module.exports = require("next/document");
 
 /***/ })
 
