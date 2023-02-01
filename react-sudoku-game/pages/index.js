@@ -493,9 +493,6 @@ export default class Index extends Component {
   };
 
   selectCell = (x, y) => {
-
-    console.log("Cell Selected");
-
     let { board } = this.state;
     board = board.set('selected', { x, y });
     this.setState({ board });
@@ -551,24 +548,31 @@ export default class Index extends Component {
   }
   
   renderNumberControl() {
+    const { board } = this.state;
     const selectedCell = this.getSelectedCell();
     const prefilled = selectedCell && selectedCell.get('prefilled');
+    const inNoteMode = board.get('inNoteMode');
+    
     return (
       <div className="control">
         {range(9).map((i) => {
           const number = i + 1;
-          // handles binding single click and double click callbacks
-          const clickHandle = getClickHandler(
-            () => { this.fillNumber(number); },
-            () => { this.addNumberAsNote(number); },
-          );
+          const onClick = !prefilled 
+            ? () => {
+              inNoteMode 
+                ? this.addNumberAsNote(number) 
+                : this.fillNumber(number); 
+            } 
+            : undefined;
+          
           return (
             <NumberControl
               key={number}
               number={number}
-              onClick={!prefilled ? clickHandle : undefined}
+              onClick={onClick}
               completionPercentage={this.getNumberValueCount(number) / 9}
-            />);
+            />
+          );
         })}
         <style jsx>{ControlStyle}</style>
       </div>
